@@ -6,7 +6,7 @@ class TodoWrapper extends Component {
     super(props);
     this.state = {
       inputText: "",
-      lists: [ ]
+      lists: []
     };
   }
 
@@ -42,7 +42,7 @@ console.log(" We are here")
    this.setState({lists: [...this.state.lists.filter( val => val.id !== itemId)]})
   }
 
-  handleStatus = (itemId)=>{
+  handleUpdate = (itemId)=>{
     console.log("We are here")
 
     const getItem = this.state.lists.filter(val => val.id === itemId);
@@ -62,6 +62,7 @@ console.log(" We are here")
 
 
   render() {
+
     return (
       <div className="todoListwrapper">
         <div className="inputAndButton">
@@ -74,7 +75,7 @@ console.log(" We are here")
               return (
                 <div key={item.id} className="itemWrapper">
                   { (item.status === "incomplete")? item.name : ( <strike style={{color:"#999"}}>{item.name}</strike>) }
-                  <button onClick={() => this.handleStatus(item.id)}>{(item.status === "incomplete")? "INCOMPLETE" : "COMPLETED"}</button>
+                  <button onClick={() => this.handleUpdate(item.id)}>{(item.status === "incomplete")? "INCOMPLETE" : "COMPLETED"}</button>
                   <button style={{backgroundColor:"red", color:"#ffffff"}} onClick={() => this.deleteItem(item.id)}>DELETE</button>
                 </div>
               )
