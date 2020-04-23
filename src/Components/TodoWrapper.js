@@ -6,7 +6,7 @@ class TodoWrapper extends Component {
     super(props);
     this.state = {
       inputText: "",
-      lists: [],
+      lists: []
         };
   }
 
