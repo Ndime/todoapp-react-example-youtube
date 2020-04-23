@@ -60,8 +60,8 @@ console.log(" We are here")
     return (
       <div className="todoListwrapper">
         <div className="inputAndButton">
-          <input type="text" placeholder="insert text here" value={this.state.inputText} onChange={this.handleTextInput} onKeyPress={this.handleEnterKey}></input>
-          <button style={{backgroundColor:"green", color:"#ffffff"}} onClick={this.handleClick}>ADD</button>
+          <input type="text" placeholder="insert text here" value={this.state.inputText} onChange={()=>this.handleTextInput()} onKeyPress={()=>this.handleEnterKey()}></input>
+          <button style={{backgroundColor:"green", color:"#ffffff"}} onClick={()=>this.handleClick()}>ADD</button>
         </div>
         <div className="itemlist">
           {
