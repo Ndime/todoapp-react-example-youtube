@@ -6,11 +6,9 @@ class TodoWrapper extends Component {
     super(props);
     this.state = {
       inputText: "",
-      lists: []
-    };
+      lists: [],
+        };
   }
-
-
 
 
   handleTextInput = (e) => {
@@ -28,13 +26,11 @@ class TodoWrapper extends Component {
     }
   }
 
-
   handleClick = () => {
-    if(this.state.inputText !== ""){
+    if(this.state.inputText !== ""){              
       this.setState({lists: [...this.state.lists, {id:uuidv4(), name: this.state.inputText, status: "incomplete"}]});
       this.setState({inputText:""})
     }
-
   }
 
   deleteItem = (itemId) =>{
@@ -57,9 +53,7 @@ console.log(" We are here")
 
     this.setState({lists: [...this.state.lists]})
 
-
   }
-
 
   render() {
 
@@ -82,10 +76,8 @@ console.log(" We are here")
             }
             )
           }
-
         </div>
       </div>
-
     );
   }
 }
